@@ -1415,6 +1415,7 @@
                 return {
                     id: convertedId,
                     id_org: id,
+                    index: index,
                     values: data.map(function (d, i) {
                         var xKey = getXKey(id), rawX = d[xKey], x = generateTargetX(rawX, id, i);
                         // use x as categories if custom x and categorized
@@ -1463,8 +1464,9 @@
             return {
                 id : target.id,
                 id_org : target.id_org,
+                index : target.index,
                 values : target.values.map(function (d) {
-                    return {x: d.x, value: d.value, id: d.id};
+                    return {value: d.value, id: d.id, index: target.index};
                 })
             };
         }
